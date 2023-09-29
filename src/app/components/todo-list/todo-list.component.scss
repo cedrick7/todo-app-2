@@ -1,0 +1,94 @@
+// @import url("./../../_variables.scss");
+
+// todoList table
+#todoList_table {
+  margin: 15px auto;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  tr:first-child {
+    border-top: 1px solid rgb(222, 226, 230);
+  }
+
+  th,
+  td {
+    text-align: center;
+    // text-decoration: $text-decoration_default;
+    text-decoration: none;
+    // color: $color_default;
+    color: #333333;
+    width: 60px;
+    min-height: 41px;
+
+    button,
+    i {
+      background-color: transparent;
+    }
+
+    .fa-trash {
+      // color: $color_red;
+      color: #fc2323;
+    }
+
+    .btn_invinsible {
+      border: none;
+    }
+  }
+
+  .th_task_name,
+  .td_task_name {
+    text-align: left;
+    width: auto;
+  }
+
+  .td_task_name,
+  .span_task {
+    // text-decoration: $text-decoration_default;
+    text-decoration: none;
+    // color: $color_default;
+    color: #333333;
+  }
+}
+
+// checkbox
+.checkbox {
+  opacity: 0;
+}
+
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.stack > i {
+  padding: 3px;
+}
+
+.fa-circle-check {
+  display: none;
+}
+
+.checkbox:checked ~ .fa-circle {
+  display: none;
+}
+
+.checkbox:checked ~ .fa-circle-check {
+  display: inline-block;
+  // color: $color_green;
+  color: #6ba317;
+}
+
+.check:checked ~ .td_task_name,
+.check:checked ~ .span_task {
+  text-decoration: line-through;
+  // color: $color_red;
+  color: #fc2323;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #fc2323;
+}

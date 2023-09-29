@@ -1,0 +1,48 @@
+<section id="app-input-field">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form #addTodoForm="ngForm" (ngSubmit)="addTodo(addTodoForm)">
+          <div id="input_field_wrapper">
+            <!-- <label for="inp_todo">Create a todo</label> -->
+            <div class="input-group form-group">
+              <input
+                type="text"
+                name="addTodo"
+                id="inp_todo"
+                class="form-control"
+                placeholder="create new todo"
+                required
+                minlength="3"
+                #todo="ngModel"
+                ngModel
+              />
+              <button
+                type="submit"
+                class="input_group_icon"
+                id="plus_icon"
+                class="input-group-text"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <!-- <div
+          id="errorMessage"
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="todo.touched && todo.invalid"
+        >
+          <p><b>Something went wrong with your input, pls check restrictions!</b></p>
+          <hr />
+          <p class="errorMessage_detail">You forgot write a todo...</p>
+          <p class="errorMessage_detail" *ngIf="todo.errors?.['required']">
+            You forgot write a todo...
+          </p>
+          <p class="errorMessage_detail" *ngIf="todo.errors?.['minlength']>Your todo is too short (use minimum of 3 letters)...</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>

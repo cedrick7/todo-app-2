@@ -1,0 +1,28 @@
+// @import url("./../../_variables.scss");
+
+#input_field_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px auto;
+
+  #plus_icon {
+    // text-decoration: $text-decoration_default;
+    text-decoration: none;
+    // color: $color_default;
+    color: #333333;
+  }
+}
+
+#errorMessage {
+  margin: 5px auto;
+
+  p {
+    margin: 0;
+  }
+
+  .errorMessage_detail {
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,54 @@
+<section id="app-todo-list">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table id="todoList_table" class="table table-striped table-responsive">
+          <tbody>
+            <!-- <tr *ngFor="let i = index; let todo; of: todos$ | async">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <span class="stack">
+                  <input type="checkbox" class="checkbox" name="checkTask" value="" />
+                  <i class="fa-regular fa-circle"></i>
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+              </td>
+              <td class="td_task_name">
+                <span class="span_task">{{ todo }}</span>
+              </td>
+              <td>
+                <button type="button" class="removeButton btn_invinsible" (click)="removeTodo(i)">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr> -->
+            <tr *ngFor="let i = index; let todo; of: todos$ | async">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <span class="stack">
+                  <input type="checkbox" class="checkbox" name="checkTask" value="" />
+                  <i class="fa-regular fa-circle"></i>
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+              </td>
+              <td class="td_task_name">
+                <span class="span_task" [ngClass]="{ completed: todo.completed }">{{
+                  todo.title
+                }}</span>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  class="removeButton btn_invinsible"
+                  (click)="removeTodo(todo.id)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

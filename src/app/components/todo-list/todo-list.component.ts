@@ -12,26 +12,20 @@ import { Observable } from "rxjs";
   styleUrls: ["./todo-list.component.scss"],
 })
 export class TodoListComponent {
-  // as init + loadTodos()
-  todos$ = this.store.select(getTodos);
-
-  toggleTodo(id: string) {
-    this.store.dispatch(TodoActions.toggleTodo({ id }));
-  }
-
-  removeTodo(id: string) {
-    this.store.dispatch(TodoActions.removeTodo({ id }));
-  }
-
   constructor(private store: Store<{}>) {
     console.log(this.todos$);
   }
 
-  // todos$!: Todo[];
+  // as init + loadTodos()
+  todos$ = this.store.select(getTodos);
 
-  // constructor(private store: Store<{ todos: { todos: Todo[] } }>) {
-  //   store.select("todos").subscribe((todosState: { todos: Todo[] }) => {
-  //     this.todos$ = todosState.todos;
-  //   });
-  // }
+  // input onClick
+  toggleTodo(todo: Todo) {
+    this.store.dispatch(TodoActions.toggleTodo({ todo: todo }));
+  }
+
+  // button onClick
+  removeTodo(id: string) {
+    this.store.dispatch(TodoActions.removeTodo({ id }));
+  }
 }

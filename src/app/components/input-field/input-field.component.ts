@@ -11,11 +11,10 @@ import { Todo } from "src/app/model/todo.model";
   styleUrls: ["./input-field.component.scss"],
 })
 export class InputFieldComponent {
-  //public inputValue: string = "";
+  constructor(private store: Store<{}>) {}
 
+  // form submit
   addTodo(addTodoForm: NgForm): void {
-    //this.inputValue = addTodoForm.form.value.addTodo;
-
     const _todo: Todo = {
       id: Date.now().toString(),
       title: addTodoForm.form.value.addTodo,
@@ -25,9 +24,6 @@ export class InputFieldComponent {
 
     this.store.dispatch(addTodo({ todo: _todo }));
 
-    // this.inputValue = "";
     addTodoForm.form.reset();
   }
-
-  constructor(private store: Store<{}>) {}
 }

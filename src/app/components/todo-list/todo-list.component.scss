@@ -25,6 +25,11 @@
       background-color: transparent;
     }
 
+    .toggleCompleted {
+      text-decoration: none;
+      border: none;
+    }
+
     .fa-trash {
       // color: $color_red;
       color: #fc2323;
@@ -67,28 +72,62 @@
   padding: 3px;
 }
 
+.fa-circle,
 .fa-circle-check {
-  display: none;
-}
-
-.checkbox:checked ~ .fa-circle {
-  display: none;
-}
-
-.checkbox:checked ~ .fa-circle-check {
   display: inline-block;
-  // color: $color_green;
+}
+
+.fa-circle-check {
   color: #6ba317;
 }
 
-.check:checked ~ .td_task_name,
-.check:checked ~ .span_task {
-  text-decoration: line-through;
-  // color: $color_red;
-  color: #fc2323;
+.checkbox,
+.stack,
+.stack > * {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.completed {
-  text-decoration: line-through;
-  color: #fc2323;
-}
+// styles for checkbox (plain css toggle switch) --> not needed anymore
+// .checkbox {
+//   opacity: 0;
+// }
+
+// .stack {
+//   display: grid;
+// }
+// .stack > * {
+//   grid-row: 1;
+//   grid-column: 1;
+// }
+
+// .stack > i {
+//   padding: 3px;
+// }
+
+// .fa-circle-check {
+//   display: none;
+// }
+
+// .checkbox:checked ~ .fa-circle {
+//   display: none;
+// }
+
+// .checkbox:checked ~ .fa-circle-check {
+//   display: inline-block;
+//   // color: $color_green;
+//   color: #6ba317;
+// }
+
+// .check:checked ~ .td_task_name,
+// .check:checked ~ .span_task {
+//   text-decoration: line-through;
+//   // color: $color_red;
+//   color: #fc2323;
+// }
+
+// .completed {
+//   text-decoration: line-through;
+//   color: #fc2323;
+// }

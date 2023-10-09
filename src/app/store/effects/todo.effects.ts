@@ -37,16 +37,16 @@ export class TodoEffects {
     )
   );
 
-  // toggleTodo$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(TodosActions.toggleTodo),
-  //     map((action) => {
-  //       return TodosActions.todoAdded({
-  //         complete: action.complete,
-  //       });
-  //     })
-  //   )
-  // );
+  toggleTodo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(TodosActions.toggleTodo),
+      map((action) => {
+        return TodosActions.todoToggled({
+          todo: action.todo,
+        });
+      })
+    )
+  );
 
   removeTodo$ = createEffect(() =>
     this.actions$.pipe(

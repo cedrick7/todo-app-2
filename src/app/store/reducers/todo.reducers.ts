@@ -30,10 +30,10 @@ export const TodosReducer = createReducer(
     ...state,
     todos: [...state.todos, todo],
   })),
-  on(TodosActions.todoToggled, (state, { id }) => ({
+  on(TodosActions.todoToggled, (state, action) => ({
     ...state,
     todos: state.todos.map((todo) =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      todo.id === action.todo.id ? { ...todo, completed: !todo.completed } : todo
     ),
   })),
   on(TodosActions.todoRemoved, (state, { id }) => ({

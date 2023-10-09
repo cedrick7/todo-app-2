@@ -51,7 +51,6 @@ export class TodoEffects {
   removeTodo$ = createEffect(() =>
     this.actions$.pipe(
       ofType(TodosActions.removeTodo),
-      // ofType(loadFlower),
       map((action) => {
         return TodosActions.todoRemoved({
           id: action.id,
